@@ -1,1 +1,47 @@
-Teste 1
+import application.Funcionario;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        //Instanciar a Lista de Funcionarios
+        //A list é interface
+        List<Funcionario> list = ArrayList<>();
+
+        System.out.println("Quantos funcionários serão registrados?");
+        int n = sc.nextInt();
+
+        for(int i = 0; i < n; i++){
+            System.out.println();
+            System.out.println("Funcionário #" + (i+1) + ":");
+            System.out.print("Id: ");
+            Integer id = sc.next();
+            System.out.print("Nome: ");
+            sc.nextLine();
+            String nome = sc.nextLine();
+            System.out.print("Salário: ");
+            Double salario = sc.nextDouble();
+
+            //Instanciando um objeto Func
+            Funcionario Func = new Funcionario(id, nome, salario);
+
+
+
+
+        }
+
+        System.out.println("Entre com o ID do funcionário que terá o salário incrementado: ");
+
+
+        sc.close();
+    }
+}
